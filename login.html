@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Digital Taxi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container-login">
+        <div class="company-header">  <!-- New container for company name -->
+            <h1>Digital Taxi</h1>
+       </div>
+        <h2>Login</h2>
+        <form action="/login" method="post" id="loginForm">  <!-- Replace /login with your actual backend endpoint -->
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="email" required>
+                 <span class="error-message" id="login-email-error"></span>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" required>
+                <span class="error-message" id="login-password-error"></span>
+            </div>
+
+             <div class="social-login">
+                <button type="button" class="google"><i class="fab fa-google"></i> Sign in with Google</button>
+                <button type="button" class="phone"><i class="fas fa-phone"></i> Sign in with Phone</button>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+        <div class="form-footer">
+            Don't have an account? <a href="register.html">Sign Up</a>
+        </div>
+    </div>
+     <script src="script.js"></script>
+</body>
+</html>
