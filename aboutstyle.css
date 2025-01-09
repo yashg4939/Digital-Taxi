@@ -1,0 +1,251 @@
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #1a73e8;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #1a73e8;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Header Navigation */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #1a73e8;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #fff;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.hero-content, .hero-image {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Scroll Container */
+.scroll-container {
+    max-height: 600px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* Mission Section */
+.mission-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+/* Values Section */
+.values-section {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.value-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.value-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: scale(1.05);
+}
+
+.value-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Team Section */
+.team-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.team-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.team-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+}
+
+.team-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: #1a73e8;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.cta-section h2 {
+    color: #fff;
+}
+
+.cta-section p {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #fff;
+    color: #1a73e8;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 10px 0;
+    color: #fff;
+}
+
+footer a {
+    color: #1a73e8;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .value-cards, .team-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .value-card, .team-card {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+    }
+}

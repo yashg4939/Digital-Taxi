@@ -7,9 +7,16 @@
   <link rel="stylesheet" href="frontstyle.css">
 </head>
 <body>
-  <!-- Header -->
+  
   <header>
     <nav class="navbar">
+      <!-- Left: Logo and Company Name -->
+      <div class="logo-container">
+        <img src="logo.png" alt="Digital Taxi Logo" class="logo"> <!-- Replace with your logo -->
+        <span class="company-name">Digital Taxi</span>
+      </div>
+  
+      <!-- Center: Navigation Links -->
       <ul class="nav-links">
         <li><a href="index.html" class="active">Search</a></li>
         <li><a href="publish.html">Publish Ride</a></li>
@@ -18,27 +25,112 @@
         <li><a href="contact.html">Contact Us</a></li>
         <li><a href="about.html">About Us</a></li>
       </ul>
+  
+      <!-- Right: Profile Icon with Dropdown -->
+      <div class="profile-container">
+        <div class="profile-icon-wrapper">
+          <!-- Profile Image -->
+          <img src="https://cdn.blablacar.com/kairos/assets/images/signin-640a2bdb09c085fd1d8e.svg" alt="Profile Icon" class="profile-icon">
+          <!-- Dropdown Arrow -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="dropdown-arrow" role="img" aria-hidden="true">
+            <g color="currentColor">
+              <path fill="currentColor" fill-rule="evenodd" d="M8.29289 6.70711c-.39052-.39053-.39052-1.02369 0-1.41422.39053-.39052 1.02369-.39052 1.41422 0l5.99999 6.00001c.3905.3905.3905 1.0237 0 1.4142l-5.99999 6c-.39053.3905-1.02369.3905-1.41422 0-.39052-.3905-.39052-1.0237 0-1.4142L13.5858 12 8.29289 6.70711Z" clip-rule="evenodd" transform="rotate(90 12 12)"></path>
+            </g>
+          </svg>
+        </div>
+  
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu">
+          <!-- Login Option -->
+          <a type="button" class="kirk-item kirk-item--clickable kirk-item--flat" href="login.html">
+            <span class="kirk-item-leftWrapper">
+              <span class="kirk-item-leftText">
+                <span class="kirk-text">Log in</span>
+              </span>
+            </span>
+            <span class="kirk-item-rightAddon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" class="right-arrow-icon">
+                <g color="currentColor">
+                  <path fill="currentColor" fill-rule="evenodd" d="M8.293 6.707a1 1 0 0 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L13.586 12z" clip-rule="evenodd"></path>
+                </g>
+              </svg>
+            </span>
+          </a>
+  
+          <!-- Signup Option -->
+          <a type="button" class="kirk-item kirk-item--clickable kirk-item--flat" href="register.html">
+            <span class="kirk-item-leftWrapper">
+              <span class="kirk-item-leftText">
+                <span class="kirk-text">Register</span>
+              </span>
+            </span>
+            <span class="kirk-item-rightAddon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" class="right-arrow-icon">
+                <g color="currentColor">
+                  <path fill="currentColor" fill-rule="evenodd" d="M8.293 6.707a1 1 0 0 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414-1.414L13.586 12z" clip-rule="evenodd"></path>
+                </g>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
     </nav>
   </header>
 
-  <!-- Main Content -->
+
   <main>
     <div class="centered-container">
       <h2>Find a Ride</h2>
-      <form>
+      <form id="ride-form" onsubmit="handleFormSubmit(event)">
+        <!-- Pickup Location -->
         <label for="pickup">Pickup Location:</label>
-        <input type="text" id="pickup" placeholder="Enter pickup location" required>
-
+        <input 
+          type="text" 
+          id="pickup" 
+          placeholder="Enter pickup location" 
+          required 
+          oninput="fetchSuggestions(this.value, 'pickup-suggestions')" 
+          aria-controls="pickup-suggestions"
+          aria-autocomplete="list"
+        >
+        <div class="suggestions-box" id="pickup-suggestions"></div>
+        <button 
+          type="button" 
+          id="current-location-btn" 
+          onclick="getCurrentLocation('pickup')"
+        >
+          Use Current Location
+        </button>
+        
+        <!-- Destination -->
         <label for="destination">Destination:</label>
-        <input type="text" id="destination" placeholder="Enter destination" required>
+        <input 
+          type="text" 
+          id="destination" 
+          placeholder="Enter destination" 
+          required 
+          oninput="fetchSuggestions(this.value, 'destination-suggestions')" 
+          aria-controls="destination-suggestions"
+          aria-autocomplete="list"
+        >
+        <div class="suggestions-box" id="destination-suggestions"></div>
+        
+        <!-- Date -->
+        <!-- <label for="date">Select Date:</label>
+        <input type="date" id="date" required> -->
 
-        <label for="date">Select Date:</label>
-        <input type="date" id="date" required>
-
+        <!-- Date and Time -->
+        <label for="datetime">Select Date and Time:</label>
+        <input type="datetime-local" id="datetime" required>
+  
+        <!-- Submit -->
         <button type="submit" class="primary-btn">Search</button>
       </form>
     </div>
   </main>
+  
+  <script src="script.js"></script>
+  
 
   <!-- Footer -->
   <footer>

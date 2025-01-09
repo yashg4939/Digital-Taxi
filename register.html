@@ -183,6 +183,29 @@
                         <label for="register-vehicle-year">Driving License Number</label>
                         <input type="text" id="register-license-number" name="license number">
                     </div>
+                    <form id="license-form" onsubmit="return validateForm()">
+                        <div class="form-group">
+                            <label for="front-photo">Driving License Front Photo</label>
+                            <input 
+                                type="file" 
+                                id="front-photo" 
+                                name="front-photo" 
+                                accept="image/*" 
+                                required>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="back-photo">Driving License Back Photo</label>
+                            <input 
+                                type="file" 
+                                id="back-photo" 
+                                name="back-photo" 
+                                accept="image/*" 
+                                required>
+                        </div>
+                    
+                        <button type="submit">Submit</button>
+                    </form>
                     
                 </div>
             </div>

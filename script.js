@@ -50,6 +50,124 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
+
+
+
+    function toggleDropdown() {
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        const dropdownArrow = document.querySelector('.dropdown-arrow');
+      
+        // Toggle visibility of the dropdown menu
+        if (dropdownMenu.style.display === 'block') {
+          dropdownMenu.style.display = 'none';
+          dropdownArrow.classList.remove('rotate-up'); // Reset arrow direction
+        } else {
+          dropdownMenu.style.display = 'block';
+          dropdownArrow.classList.add('rotate-up'); // Rotate arrow upward
+        }
+      }
+
+      
+// Function to fetch location suggestions using Nominatim API
+function fetchSuggestions(query, suggestionsBoxId) {
+    const suggestionsBox = document.getElementById(suggestionsBoxId);
+  
+    // Clear previous suggestions
+    suggestionsBox.innerHTML = "";
+    suggestionsBox.style.display = "none";
+  
+    if (query.length > 2) { // Trigger API call if the input length is > 2
+      fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&addressdetails=1&countrycodes=in`)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("API Response:", data); // Log API response
+          if (data.length > 0) {
+            data.forEach((location) => {
+              const suggestionDiv = document.createElement("div");
+              suggestionDiv.textContent = location.display_name; // Use display_name
+              suggestionDiv.className = "suggestion"; // Styling
+              suggestionDiv.onclick = () => {
+                const inputElement = document.querySelector(`#${suggestionsBoxId.replace("-suggestions", "")}`);
+                inputElement.value = location.display_name;
+                suggestionsBox.style.display = "none";
+              };
+              suggestionsBox.appendChild(suggestionDiv);
+            });
+  
+            suggestionsBox.style.display = "block"; // Show suggestions
+          } else {
+            console.log("No suggestions found.");
+          }
+        })
+        .catch((error) => console.error("Error fetching suggestions:", error));
+    }
+  }
+
+// Function to get the current location
+function getCurrentLocation(inputId) {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+
+        // Fetch address from Nominatim API using reverse geocoding
+        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&addressdetails=1`)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`Error fetching location: ${response.statusText}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            if (data && data.display_name) {
+              const input = document.getElementById(inputId);
+              input.value = data.display_name; // Set input field value to the current location
+              console.log("Current location:", data.display_name);
+            } else {
+              console.error("No address found for current location.");
+            }
+          })
+          .catch((error) => console.error("Error fetching current location:", error));
+      },
+      (error) => {
+        console.error("Geolocation error:", error);
+        alert("Unable to fetch current location. Please enable location services.");
+      }
+    );
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
+//function for driving license validation
+function validateForm() {
+  const frontPhoto = document.getElementById("front-photo").files.length;
+  const backPhoto = document.getElementById("back-photo").files.length;
+
+  if (frontPhoto === 0 || backPhoto === 0) {
+      alert("Please upload both the front and back photos of your driving license.");
+      return false; // Prevent form submission
+  }
+
+  return true; // Allow form submission
+}
+
+
+// Hide suggestions when clicking outside
+document.addEventListener("click", (event) => {
+  const suggestionsBoxes = document.querySelectorAll(".suggestions-box");
+  suggestionsBoxes.forEach((box) => {
+    if (!box.contains(event.target)) {
+      box.style.display = "none";
+    }
+  });
+});
+
+
+
+
+
+
   
     // Registration Form Validation
     const registerForm = document.getElementById("registerForm");
