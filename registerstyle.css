@@ -1,0 +1,279 @@
+/* style.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('taxibackground.jpg') no-repeat center center fixed;
+    background-size: 100% 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    position: relative; /* Required for layering */
+    overflow: hidden; /* Prevents scrollbars from appearing */
+}
+
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px; /* Reduce padding for compact content */
+    margin: 20px auto; /* Space around the container */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: calc(100% - 40px); /* Maintain space on all sides */
+    max-width: 900px; /* Limit maximum width for better responsiveness */
+    max-height: calc(100vh - 40px); /* Ensure the container stays within the viewport */
+    overflow-y: auto; /* Enable vertical scrolling for overflowing content */
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.container:hover {
+    /*transform: translateY(-5px); /*move the container*/
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Optional: Enhance shadow on hover */
+}
+/*.container h2{
+    margin-top: 55px; /* Adjusted margin-top   
+   }*/
+
+   .container-login {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px; /* Reduced padding to save space */
+    margin: 0; /* Remove extra vertical margins */
+    border-radius: 15px;
+    font-size: 0.9em;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 450px; /* Smaller width to fit compactly */
+    max-width: 90%; /* Responsive for smaller screens */
+    height: auto; /* Adjust height dynamically with content */
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: absolute; /* Allow positioning relative to the parent */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Final alignment in the center */
+}
+
+.container-login:hover {
+    /*transform: translateY(-5px); /*move the container*/
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Optional: Enhance shadow on hover */
+}
+.company-header {
+    position: relative;
+    top: -5px; /* Adjusted top value */
+    left: 25%;
+    width: fit-content; /* Adjust width to content */
+    margin: 0 auto 20px auto; /* Center the box horizontally */
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 8px 15px; /* Adjusted padding */
+    border-radius: 20px; /* More rounded corners */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    z-index: 2;
+     display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center items */
+    gap: 10px; /* Space between icon and text */
+    box-sizing: border-box;
+
+}
+
+.company-header h1 {
+    margin: 0;
+    color: #0056b3;
+    font-size: 2.4em;  /* Slightly larger font */
+    font-weight: bold;
+    align-items: center;
+    white-space: nowrap;
+     font-family: 'Pacifico', cursive; /* Example: Use a more stylized font */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a text shadow */
+
+
+}
+.company-header i{
+  font-size: 2.5em; /* Make icon slightly larger */
+    color: #e67e22; /* Example color - a vibrant orange/yellow */
+
+}
+
+h2 {
+    margin-bottom: 30px;
+    color: #0056b3;
+     font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+     text-align: left; /* Align labels and inputs to the left */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"]
+ {
+    width: calc(100% - 22px); /* Adjust for padding */
+    padding: 10px;
+    margin-bottom: 5px; /* Space between input and potential error */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+      transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus {
+    border-color: #0056b3;
+    outline: none;
+     box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px; /* Space above the error */
+    display: block; /* Ensure it takes up the full width */
+
+
+}
+.social-login {
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+
+}
+
+.social-login button {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+     display: inline-flex; /* Align icon and text */
+    align-items: center;
+    justify-content: center;
+     width: 45%; /* Make buttons take equal space */
+    font-size: 14px;
+
+
+}
+
+.social-login button:hover {
+    background-color: #f0f0f0;
+      transform: scale(1.05);
+}
+
+.social-login button i {
+  margin-right: 8px; /* Space between icon and text */
+    font-size: 18px;
+
+}
+.social-login .google {
+    border-color:#db4a39;
+     color: #db4a39;
+}
+.social-login .google:hover{
+     background-color: #db4a39;
+    color: white;
+}
+
+
+.social-login .phone{
+      border-color: #34a853; /* Example color, adjust as needed */
+    color: #34a853;
+
+}
+.social-login .phone:hover{
+    background-color: #34a853;
+     color: white;
+}
+
+button[type="submit"] {
+    background-color: #0056b3;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+     margin-top: 15px; /* Space above the button */
+}
+
+button[type="submit"]:hover {
+    background-color: #004494;
+    transform: scale(1.03);
+}
+
+.form-footer {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #666;
+}
+
+.form-footer a {
+    color: #0056b3;
+    text-decoration: none;
+     font-weight: 600;
+}
+.form-footer a:hover {
+     text-decoration: underline;
+}
+
+.image-preview {
+    width: 100px; /* Adjust as needed */
+    height: 100px;
+    border: 2px dashed #aaa;
+    border-radius: 50%; /* Circular preview */
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure image stays within circle */
+
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+     display: block;
+
+}
+
+#register-photo { /*style the actual file input to be less prominent*/
+    opacity: 0.7;
+    font-size: smaller;
+     padding: 5px;
+
+}
+.form-grid .column .form-group:nth-child(odd) {
+    margin-bottom: 20px; /* Adjust gap as needed */
+}
+
+.driver-checkbox{
+    display: flex;
+    align-items: center; /* Vertically center checkbox and label*/
+    gap: 8px; /* Add some space between checkbox and label */
+    margin-bottom: 15px;
+    margin-top: 15px;
+     text-align: left;
+}
+.driver-checkbox label{
+     margin-bottom: 0; /* Remove default label margin */
+
+}

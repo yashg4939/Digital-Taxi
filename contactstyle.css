@@ -1,0 +1,20 @@
+/* Scroll Container */
+/* .scroll-container {
+    max-height: 600px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 60px;
+} */
+
+/* Scroll Container */
+.scroll-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 60px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+html {
+    scroll-behavior: smooth;
+}

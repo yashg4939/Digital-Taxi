@@ -1,0 +1,16 @@
+/* Current Location Button */
+#current-location-btn {
+    margin-top: 10px;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #current-location-btn:hover {
+    background-color: #0056b3;
+  }

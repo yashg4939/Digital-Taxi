@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CarpoolEase - Find a Ride</title>
+  <title>ShareWey - Find a Ride</title>
   <link rel="stylesheet" href="frontstyle.css">
+  <link rel="stylesheet" href="indexstyle.css">
 </head>
 <body>
   
@@ -13,12 +14,12 @@
       <!-- Left: Logo and Company Name -->
       <div class="logo-container">
         <img src="logo.png" alt="Digital Taxi Logo" class="logo"> <!-- Replace with your logo -->
-        <span class="company-name">Digital Taxi</span>
+        <a href="home.html" class="company-name">ShareWey</a>
       </div>
   
       <!-- Center: Navigation Links -->
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Search</a></li>
+        <li><a href="index.html" class="active">Search Ride</a></li>
         <li><a href="publish.html">Publish Ride</a></li>
         <li><a href="chats.html">Chats</a></li>
         <li><a href="profile.html">Profile</a></li>
@@ -31,16 +32,19 @@
         <div class="profile-icon-wrapper">
           <!-- Profile Image -->
           <img src="https://cdn.blablacar.com/kairos/assets/images/signin-640a2bdb09c085fd1d8e.svg" alt="Profile Icon" class="profile-icon">
-          <!-- Dropdown Arrow -->
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="dropdown-arrow" role="img" aria-hidden="true">
-            <g color="currentColor">
-              <path fill="currentColor" fill-rule="evenodd" d="M8.29289 6.70711c-.39052-.39053-.39052-1.02369 0-1.41422.39053-.39052 1.02369-.39052 1.41422 0l5.99999 6.00001c.3905.3905.3905 1.0237 0 1.4142l-5.99999 6c-.39053.3905-1.02369.3905-1.41422 0-.39052-.3905-.39052-1.0237 0-1.4142L13.5858 12 8.29289 6.70711Z" clip-rule="evenodd" transform="rotate(90 12 12)"></path>
-            </g>
-          </svg>
+          
+          <div class="dropdown-arrow">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <g fill="currentColor">
+                <path fill-rule="evenodd" d="M8.29289 6.70711c-.39052-.39053-.39052-1.02369 0-1.41422.39053-.39052 1.02369-.39052 1.41422 0l5.99999 6.00001c.3905.3905.3905 1.0237 0 1.4142l-5.99999 6c-.39053.3905-1.02369.3905-1.41422 0-.39052-.3905-.39052-1.0237 0-1.4142L13.5858 12 8.29289 6.70711Z" clip-rule="evenodd" transform="rotate(90 12 12)"></path>
+              </g>
+            </svg>
+          </div>
         </div>
   
         <!-- Dropdown Menu -->
         <div class="dropdown-menu">
+          
           <!-- Login Option -->
           <a type="button" class="kirk-item kirk-item--clickable kirk-item--flat" href="login.html">
             <span class="kirk-item-leftWrapper">
@@ -116,12 +120,12 @@
         <div class="suggestions-box" id="destination-suggestions"></div>
         
         <!-- Date -->
-        <!-- <label for="date">Select Date:</label>
-        <input type="date" id="date" required> -->
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" required>
 
         <!-- Date and Time -->
-        <label for="datetime">Select Date and Time:</label>
-        <input type="datetime-local" id="datetime" required>
+        <!-- <label for="datetime">Select Date and Time:</label>
+        <input type="datetime-local" id="datetime" required> -->
   
         <!-- Submit -->
         <button type="submit" class="primary-btn">Search</button>
@@ -134,7 +138,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 CarpoolEase. All rights reserved.</p>
+    <p>&copy; 2025 ShareWey. All rights reserved.</p>
     <p>
       <a href="about.html">About Us</a> | 
       <a href="contact.html">Contact Us</a> | 

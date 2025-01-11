@@ -1,7 +1,7 @@
 /* General Styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #f8f9fa;
   color: #333;
   background: url('taxibackground.jpg') no-repeat center center fixed;
@@ -10,6 +10,8 @@ body {
 }
 
 /* Header Section */
+/* Header Navigation */
+
 header {
   background-color: rgba(0, 123, 255, 0.9); /* Slight transparency for better blending */
   color: #fff;
@@ -17,7 +19,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add subtle shadow */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -42,7 +44,7 @@ header {
 }
 
 .company-name {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
   color: #fff;
 }
@@ -51,16 +53,20 @@ header {
 .nav-links {
   list-style: none;
   display: flex;
+  justify-content: center;
   gap: 2rem;
   margin: 0;
-  padding: 0;
+
+  /* padding: 0; */
+  padding: 15px 0;
 }
 
 .nav-links a {
   color: #fff;
   text-decoration: none;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 500;
+  /* font-weight: bold; */
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -81,7 +87,7 @@ header {
 .profile-icon-wrapper {
   display: flex;
   align-items: center;
-  cursor: pointer;
+   
 }
 
 .profile-icon {
@@ -93,11 +99,12 @@ header {
 }
 
 .dropdown-arrow {
-  margin-left: 8px;
+  margin-left: 10px;
   height: 18px;
   width: 18px;
   fill: #fff;
   transition: transform 0.3s ease;
+  cursor: pointer; /* Add pointer cursor on hover */
 }
 
 .dropdown-arrow.rotate-up {
@@ -107,7 +114,7 @@ header {
 /* Dropdown Menu */
 .dropdown-menu {
   position: absolute;
-  top: 60px;
+  top: 45px;
   right: 10px;
   background-color: #fff;
   color: #333;
@@ -198,22 +205,7 @@ main {
   background-color: #f0f0f0;
 }
 
-/* Current Location Button */
-#current-location-btn {
-  margin-top: 10px;
-  padding: 0.5rem 1rem;
-  border: none;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 0.9rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 
-#current-location-btn:hover {
-  background-color: #0056b3;
-}
 
 /* Form Styling */
 form {

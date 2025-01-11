@@ -82,12 +82,19 @@ header {
 }
 
 /* Scroll Container */
-.scroll-container {
+/* .scroll-container {
     max-height: 600px;
     overflow-y: auto;
     scroll-behavior: smooth;
-}
+} */
 
+
+.scroll-container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 60px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
 /* Mission Section */
 .mission-section {
     padding: 40px 0;
