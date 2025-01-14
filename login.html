@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Digital Taxi</title>
     <link rel="stylesheet" href="loginstyle.css">
+    <link rel="stylesheet" href ="mobileotpstyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -26,9 +27,33 @@
             </div>
 
              <div class="social-login">
-                <button type="button" class="google"><i class="fab fa-google"></i> Sign in with Google</button>
-                <button type="button" class="phone"><i class="fas fa-phone"></i> Sign in with Phone</button>
+                <button type="button" class="google"><i class="fab fa-google"></i> Sign in with Google </button>
+                <button type="button" class="phone" button id="openPopupBtn"> <i class="fas fa-phone"></i> Sign in with Phone <a href="mobileotp.html"></a> </button>
+
             </div>
+            <!-- <button id="openPopupBtn">Sign in with Phone</button> -->
+
+    <div id="phonePopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Sign in with Phone</h2>
+            <form id="phoneForm">
+                <label for="phoneNumber">Mobile Number:</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" value="+91" required>
+                <button type="button" id="getOTPBtn">Get OTP</button>
+                <div id="otpSection" style="display: none;">
+                    <label for="otp">Enter OTP:</label>
+                    <input type="text" id="otp" name="otp" required>
+                    <button type="button" id="resendOTPBtn">Resend OTP</button>
+                    <button type="submit" id="loginBtn">Login <a href="home.html"></a></button>
+                    <!-- <button type="button" id="loginBtn">Login</button> -->
+                    <!-- <button type="submit" class="phone" button id="openPopupBtn"> <i class="fas fa-phone"></i> Sign in with Phone <a href="mobileotp.html"></a> </button> -->
+
+                </div>
+            </form>
+        </div>
+    </div>
+
 
             <button type="submit">Login</button>
         </form>

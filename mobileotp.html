@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Phone</title>
+    <link rel="stylesheet" href="mobileotpstyle.css">
+</head>
+<body>
+    <button id="openPopupBtn">Sign in with Phone</button>
+
+    <div id="phonePopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Sign in with Phone</h2>
+            <form id="phoneForm">
+                <label for="phoneNumber">Mobile Number:</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" value="+91" required>
+                <button type="button" id="getOTPBtn">Get OTP</button>
+                <div id="otpSection" style="display: none;">
+                    <label for="otp">Enter OTP:</label>
+                    <input type="text" id="otp" name="otp" required>
+                    <button type="button" id="resendOTPBtn">Resend OTP</button>
+                    <button type="submit" id="loginBtn">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

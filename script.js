@@ -334,3 +334,41 @@ document.addEventListener("click", (event) => {
       return re.test(phone);
     }
   });
+
+  // mobileotpstyle.html page js is written here
+
+  document.getElementById('openPopupBtn').addEventListener('click', function() {
+    document.getElementById('phonePopup').style.display = 'block';
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('phonePopup').style.display = 'none';
+});
+
+document.getElementById('getOTPBtn').addEventListener('click', function() {
+    // Simulate OTP generation
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    if (phoneNumber && phoneNumber.length >= 10) {
+        // alert('OTP sent to ' + phoneNumber);
+        document.getElementById('otpSection').style.display = 'block';
+    } else {
+        alert('Please enter a valid phone number.');
+    }
+});
+
+document.getElementById('resendOTPBtn').addEventListener('click', function() {
+    // Simulate OTP resend
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    // alert('OTP resent to ' + phoneNumber);
+});
+
+document.getElementById('phoneForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const otp = document.getElementById('otp').value;
+    if (otp) {
+        alert('Logged in successfully!');
+        document.getElementById('phonePopup').style.display = 'none';
+    } else {
+        // alert('Please enter the OTP.');
+    }
+});
